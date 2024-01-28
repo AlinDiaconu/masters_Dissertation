@@ -16,16 +16,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Setup PlatformIO
-        uses: platformio/platformio-action@v2
-        with:
-          platformio-version: 'latest'
-
       - name: Build firmware
-        run: platformio run
+        run: |
+          docker run -v ${{ github.workspace }}:/project -w /project platformio/platformio:latest run
 
       - name: Upload firmware
-        run: platformio run --target upload
+        run: |
+          docker run -v ${{ github.workspace }}:/project -w /project platformio/platformio:latest run --target upload
 
   test:
     runs-on: windows-latest
@@ -34,10 +31,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Setup PlatformIO
-        uses: platformio/platformio-action@v2
-        with:
-          platformio-version: 'latest'
-
       - name: Run tests
-        run: platformio test
+        run: |
+          docker run -v ${{ github.workspace }}:/project -w /project platformio/platformio:latest test
