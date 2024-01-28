@@ -1,4 +1,4 @@
-name: PlatformIO Build (Windows)
+name: PlatformIO Build and Test
 
 on:
   push:
@@ -16,11 +16,28 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up PlatformIO
-        uses: platformio/github-action@v2
+      - name: Setup PlatformIO
+        uses: platformio/platformio-action@v2
         with:
-          platform: ${{ matrix.platform }}
-          board: ${{ matrix.board }}
+          platformio-version: 'latest'
 
       - name: Build firmware
-        run: pio run
+        run: platformio run
+
+      - name: Upload firmware
+        run: platformio run --target upload
+
+  test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup PlatformIO
+        uses: platformio/platformio-action@v2
+        with:
+          platformio-version: 'latest'
+
+      - name: Run tests
+        run: platformio test
