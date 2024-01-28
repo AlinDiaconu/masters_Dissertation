@@ -1,0 +1,8 @@
+# Builds
+cmake-build-minsizerel/
+cmake-build-debug/
+.pio
+build
+
+# Fișiere temporare
+*.idea
