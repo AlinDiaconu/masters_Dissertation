@@ -1,11 +1,10 @@
+Acest director este destinat bibliotecilor specifice proiectului (private).
+PlatformIO le va compila în biblioteci statice și le va lega în fișierul executabil.
 
-This directory is intended for project specific (private) libraries.
-PlatformIO will compile them to static libraries and link into executable file.
+Codul sursă al fiecărei biblioteci ar trebui plasat într-un director separat
+("lib/numele_bibliotecii_dvs/[aici sunt fișierele sursă]").
 
-The source code of each library should be placed in a an own separate directory
-("lib/your_library_name/[here are source files]").
-
-For example, see a structure of the following two libraries `Foo` and `Bar`:
+De exemplu, consultați structura următoarelor două biblioteci Foo și Bar:
 
 |--lib
 |  |
@@ -39,8 +38,9 @@ int main (void)
 
 ```
 
-PlatformIO Library Dependency Finder will find automatically dependent
-libraries scanning project source files.
+PlatformIO Library Dependency Finder va găsi automat bibliotecile dependente
+scanând fișierele sursă ale proiectului.
 
-More information about PlatformIO Library Dependency Finder
+Mai multe informații despre PlatformIO Library Dependency Finder
+
 - https://docs.platformio.org/page/librarymanager/ldf.html
