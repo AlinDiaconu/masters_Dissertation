@@ -1,4 +1,3 @@
----
 Language: Cpp
 AccessModifierOffset: -1
 AlignAfterOpenBracket: Align
@@ -65,4 +64,3 @@ SpacesInSquareBrackets: false
 Standard: Auto
 TabWidth: 8
 UseTab: Never
-...
