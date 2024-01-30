@@ -37,19 +37,19 @@ void RXpack_func()  //Receive data
             if (RX_package[0] == 0xA5 && RX_package[2] == 0x5A)     // The include and tail of the packet are verified
             {
                 order = RX_package[1];
-                if(order == Moedl1)
+                if(order == Application1)
                 {
                     model_var = 0;
                 }
-                else if (order == Moedl2)
+                else if (order == Application2)
                 {
                     model_var = 1;
                 }
-                else if (order == Moedl3)
+                else if (order == Application3)
                 {
                     model_var = 2;
                 }
-                else if (order == Moedl4)
+                else if (order == Application4)
                 {
                     model_var = 3;
                 }
@@ -92,17 +92,17 @@ void RXpack_func()  //Receive data
                 // case MotorRight:
                 //     Serial.println("MotorRight");
                 //     break;
-                // case Moedl1:
-                //     Serial.println("Moedl1");
+                // case Application1:
+                //     Serial.println("Application1");
                 //     break;
-                // case Moedl2:
-                //     Serial.println("Moedl2");
+                // case Application2:
+                //     Serial.println("Application2");
                 //     break;
-                // case Moedl3:
-                //     Serial.println("Moedl3");
+                // case Application3:
+                //     Serial.println("Application3");
                 //     break;
-                // case Moedl4:
-                //     Serial.println("Moedl4");
+                // case Application4:
+                //     Serial.println("Application4");
                 //     break;
                 // default:
                 //     break;
@@ -111,7 +111,7 @@ void RXpack_func()  //Receive data
         }
     }
 }
-void model1_func(byte orders)
+void Application1_func(byte orders)
 {
     switch (orders)
     {
@@ -158,7 +158,7 @@ void model1_func(byte orders)
         break;
     }
 }
-void model2_func()      // OA
+void Application2_func()      // OA
 {
     MOTORservo.write(90);
     UT_distance = SR04(Trig_PIN, Echo_PIN);
@@ -288,7 +288,7 @@ void model2_func()      // OA
     }
 }
 
-void model3_func()      // follow model
+void Application3_func()      // follow model
 {
     MOTORservo.write(90);
     UT_distance = SR04(Trig_PIN, Echo_PIN);
@@ -315,7 +315,7 @@ void model3_func()      // follow model
     }
 }
 
-void model4_func()      // tracking model
+void Application4_func()      // tracking model
 {
     MOTORservo.write(90);
     Left_Tra_Value = analogRead(LEFT_LINE_TRACJING);
@@ -379,16 +379,16 @@ void loop()
     switch (model_var)
     {
         case 0:
-            model1_func(order);
+            Application1_func(order);
             break;
         case 1:
-            model2_func();      // OA model
+            Application2_func();      // Aplicatie OA
             break;
         case 2:
-            model3_func();      // follow model
+            Application3_func();      // Aplicatia follow
             break;
         case 3:
-            model4_func();      // Tracking model
+            Application4_func();      // Aplicatie Tracking
             break;
     }
 
