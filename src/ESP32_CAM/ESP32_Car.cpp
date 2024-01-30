@@ -1,5 +1,6 @@
 #include "esp_camera.h"
 #include <WiFi.h>
+#include <HTTP_APP/App_httpd.cpp>
 
 //
 // ATENȚIE!!! Asigurați-vă că ați selectat fie modulul ESP32 Wrover,
