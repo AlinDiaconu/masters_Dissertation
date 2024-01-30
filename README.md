@@ -7,9 +7,10 @@ Proiectul este un proiect bazat pe ESP32 care utilizează o cameră pentru a tra
 ## Configurare
 
 ### Cerințe
-- Platform.io
-- CMake
-- C++
+- CLion
+- Platformio
+- Python
+- C/C++
   
 ## Contribuții
 Contribuțiile sunt binevenite! Dacă dorești să contribui, te rugăm să deschizi un issue sau să trimiți un pull request.
