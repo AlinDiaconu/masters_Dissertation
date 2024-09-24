@@ -1,4 +1,4 @@
-# Disertație 
+# ROBOT MOBIL ECHIPAT CU CAMERĂ
 
 ## Descriere
 Proiectul este un proiect bazat pe ESP32 care utilizează o cameră pentru a transmite imagini printr-o rețea WiFi pentru a facilita funcționalitățile asociate camerei și serverului HTTP. 
